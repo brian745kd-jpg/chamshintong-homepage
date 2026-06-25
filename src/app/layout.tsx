@@ -12,9 +12,22 @@ const notoSans = Noto_Sans_KR({
 })
 
 export const metadata: Metadata = {
-  title: '참신통한의원 | 척추·자율신경·자가면역·여성건강 전문 한의원',
+  title: '참신통한의원 | 척추·자율신경·눈·코·귀·여성건강 전문 한의원',
   description:
-    '전국 참신통 네트워크에서 동일한 진료 철학으로 환자를 진료합니다. 척추체형, 자율신경, 자가면역, 여성건강 전문 한의원.',
+    '병을 고치기 위해 병이 들어있는 사람을 고칩니다. 전국 참신통 네트워크의 통합 홈페이지입니다.',
+  openGraph: {
+    title: '참신통한의원 | 척추·자율신경·눈·코·귀·여성건강 전문 한의원',
+    description:
+      '병을 고치기 위해 병이 들어있는 사람을 고칩니다. 전국 참신통 네트워크의 통합 홈페이지입니다.',
+    type: 'website',
+    locale: 'ko_KR',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '참신통한의원 | 척추·자율신경·눈·코·귀·여성건강 전문 한의원',
+    description:
+      '병을 고치기 위해 병이 들어있는 사람을 고칩니다. 전국 참신통 네트워크의 통합 홈페이지입니다.',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
