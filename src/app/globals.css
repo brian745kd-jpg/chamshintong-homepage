@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Sage Green 브랜드 컬러 (밝은 버전) */
+  --color-navy: #4E8C7C;        /* 메인 세이지 — 헤딩·버튼·테두리 (이전 #3A6B5E 대비 +25% 밝음) */
+  --color-navy-dark: #2B5E52;   /* 딥 세이지 — 히어로·다크 섹션 (이전 #1C3830 대비 +55% 밝음) */
+  --color-navy-light: #7BBCB0;  /* 라이트 세이지 — 서브 액센트 */
+  --color-gold: #C9A96E;        /* 골드 액센트 — 유지 */
+  --color-gold-light: #E8D5A3;  /* 라이트 골드 — 유지 */
+  --color-cream: #F8F6F0;       /* 웜 화이트 — 유지 */
+  --color-sage-tint: #EBF4F1;   /* 극히 연한 세이지 — 섹션 배경 */
+
+  --font-sans: var(--font-noto-sans), 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #1a1a1a;
+  background: #ffffff;
+}
+
+/* 한글 줄바꿈 최적화 */
+p, h1, h2, h3, h4 {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 메가메뉴 애니메이션 */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mega-menu-enter {
+  animation: fadeInDown 0.18s ease-out;
+}
+
+/* 섹션 페이드업 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeInUp 0.6s ease-out;
 }
